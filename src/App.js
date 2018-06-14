@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Rechnung from './Rechnung'
 
 class App extends Component {
   render() {
@@ -11,9 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">{welcome}</h1>
         </header>
-        <p className="App-intro">
-          Ein kleines Rechenbeispiel: 3 + 4 = {3 + 4}
-        </p>
+        <Rechnung />
       </div>
     );
   }
