@@ -21,7 +21,7 @@ class Rechnung extends Component {
     }
 
     erhoeheUmZehn = () => {
-        this.setState({ zahlB: this.state.zahlB + 10 })
+        this.setState((prevState) => ({ zahlB: prevState.zahlB + 10 }))
     }
 }
 
