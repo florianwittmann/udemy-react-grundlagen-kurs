@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Rechnung from './Rechnung'
+import Liste from './Liste'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <h1 className="App-title">{welcome}</h1>
         </header>
         <Rechnung zahlA={15} />
+        <Liste />
       </div>
     );
   }
