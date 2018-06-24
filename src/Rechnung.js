@@ -9,10 +9,19 @@ class Rechnung extends Component {
 
     render() {
         return (
-            <p className="App-intro">
-                Ein kleines Rechenbeispiel: {this.props.zahlA} + {this.state.zahlB} = {this.props.zahlA + this.state.zahlB}
-            </p>
+            <div>
+                <p className="App-intro">
+                    Ein kleines Rechenbeispiel: {this.props.zahlA} + {this.state.zahlB} = {this.props.zahlA + this.state.zahlB}
+                </p>
+                <button onClick={this.erhoeheUmZehn}>
+                    + 10
+                </button>
+            </div>
         )
+    }
+
+    erhoeheUmZehn = () => {
+        this.setState({ zahlB: this.state.zahlB + 10 })
     }
 }
 
