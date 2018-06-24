@@ -4,7 +4,7 @@ class Rechnung extends Component {
     render() {
         return (
             <p className="App-intro">
-                Ein kleines Rechenbeispiel: 3 + 4 = {3 + 4}
+                Ein kleines Rechenbeispiel: {this.props.zahlA} + {this.props.zahlB} = {this.props.zahlA + this.props.zahlB}
             </p>
         )
     }

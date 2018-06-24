@@ -12,7 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">{welcome}</h1>
         </header>
-        <Rechnung />
+        <Rechnung zahlA={15} zahlB={27} />
       </div>
     );
   }
