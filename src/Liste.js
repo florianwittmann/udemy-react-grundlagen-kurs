@@ -5,7 +5,8 @@ class Liste extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      liste: []
+      liste: [],
+      neuerEintrag: ""
     };
   }
 
@@ -38,9 +39,24 @@ class Liste extends Component {
     console.log("Hallo - Ich werde jetzt ungemounted");
   }
 
+  handleChange = event => {
+    this.setState({ neuerEintrag: event.target.value });
+  };
+
   render() {
     return (
       <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Neuer Eintrag:{" "}
+            <input
+              type="text"
+              value={this.state.neuerEintrag}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Hinzufügen" />
+        </form>
         <ol>
           {this.state.liste.map(daten => (
             <Eintrag
