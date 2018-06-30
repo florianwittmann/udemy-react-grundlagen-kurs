@@ -14,6 +14,15 @@ class Liste extends Component {
         }
     }
 
+    eintragClickHandler = (eintrag) => {
+        this.setState(prevState => ({
+            liste: prevState.liste.map(
+                prevEintrag => prevEintrag.id === eintrag.id ?
+                    { ...prevEintrag, erledigt: !prevEintrag.erledigt } : prevEintrag
+            )
+        }))
+    }
+
     componentDidMount() {
         console.log('Hallo - Liste wurde gemounted');
     }
@@ -24,7 +33,7 @@ class Liste extends Component {
 
     render() {
         return (<div><ol>
-            {this.state.liste.map(daten => <Eintrag key={daten.id} todo={daten} />)}
+            {this.state.liste.map(daten => <Eintrag key={daten.id} todo={daten} eintragClickHandler={() => this.eintragClickHandler(daten)} />)}
         </ol></div>)
     }
 }
