@@ -43,6 +43,15 @@ class Liste extends Component {
     this.setState({ neuerEintrag: event.target.value });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    const eintrag = {
+      titel: this.state.neuerEintrag,
+      erledigt: false,
+      id: this.state.liste.length + 1
+    };
+    this.setState({ liste: [eintrag, ...this.state.liste], neuerEintrag: "" });
+  };
   render() {
     return (
       <div>
