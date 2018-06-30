@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Eintrag extends Component {
     render() {
-        return (<li>Eintrag</li>);
+        return (<li>{this.props.todo.titel}</li>);
     }
 }
 

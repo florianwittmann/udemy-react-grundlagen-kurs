@@ -3,12 +3,19 @@ import Eintrag from './Eintrag';
 
 class Liste extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            liste: [
+                { titel: 'Auto waschen', erledigt: false },
+                { titel: 'Koffer auspacken', erledigt: false },
+                { titel: 'Emails beantworten', erledigt: false },
+            ]
+        }
+    }
     render() {
         return (<div><ol>
-            <Eintrag />
-            <Eintrag />
-            <Eintrag />
-            <Eintrag />
+            {this.state.liste.map(daten => <Eintrag todo={daten} />)}
         </ol></div>)
     }
 }
