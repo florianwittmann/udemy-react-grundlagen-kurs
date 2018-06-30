@@ -13,8 +13,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">{welcome}</h1>
         </header>
-        <Rechnung zahlA={15} />
-        <Liste />
+        <div className="Container">
+          <Rechnung zahlA={15} />
+          <Liste />
+        </div>
       </div>
     );
   }
