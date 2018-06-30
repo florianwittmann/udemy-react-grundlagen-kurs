@@ -5,11 +5,7 @@ class Liste extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      liste: [
-        { id: 1, titel: "Auto waschen", erledigt: false },
-        { id: 2, titel: "Koffer auspacken", erledigt: true },
-        { id: 3, titel: "Emails beantworten", erledigt: false }
-      ]
+      liste: []
     };
   }
 
@@ -25,6 +21,16 @@ class Liste extends Component {
   };
 
   componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then(response => response.json())
+      .then(json =>
+        json.map(eintrag => ({
+          titel: eintrag.title,
+          erledigt: eintrag.completed,
+          id: eintrag.id
+        }))
+      )
+      .then(liste => this.setState({ liste: liste }));
     console.log("Hallo - Liste wurde gemounted");
   }
 
