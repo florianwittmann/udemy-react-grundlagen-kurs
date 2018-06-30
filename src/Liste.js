@@ -7,15 +7,15 @@ class Liste extends Component {
         super(props);
         this.state = {
             liste: [
-                { titel: 'Auto waschen', erledigt: false },
-                { titel: 'Koffer auspacken', erledigt: true },
-                { titel: 'Emails beantworten', erledigt: false },
+                { id: 1, titel: 'Auto waschen', erledigt: false },
+                { id: 2, titel: 'Koffer auspacken', erledigt: true },
+                { id: 3, titel: 'Emails beantworten', erledigt: false },
             ]
         }
     }
     render() {
         return (<div><ol>
-            {this.state.liste.map(daten => <Eintrag todo={daten} />)}
+            {this.state.liste.map(daten => <Eintrag key={daten.id} todo={daten} />)}
         </ol></div>)
     }
 }
