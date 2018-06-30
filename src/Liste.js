@@ -13,6 +13,15 @@ class Liste extends Component {
             ]
         }
     }
+
+    componentDidMount() {
+        console.log('Hallo - Liste wurde gemounted');
+    }
+
+    componentWillUnmount() {
+        console.log('Hallo - Ich werde jetzt ungemounted');
+    }
+
     render() {
         return (<div><ol>
             {this.state.liste.map(daten => <Eintrag key={daten.id} todo={daten} />)}
