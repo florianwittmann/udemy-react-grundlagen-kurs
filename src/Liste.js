@@ -8,7 +8,7 @@ class Liste extends Component {
         this.state = {
             liste: [
                 { titel: 'Auto waschen', erledigt: false },
-                { titel: 'Koffer auspacken', erledigt: false },
+                { titel: 'Koffer auspacken', erledigt: true },
                 { titel: 'Emails beantworten', erledigt: false },
             ]
         }

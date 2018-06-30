@@ -1,3 +1,7 @@
 .Eintrag {
     font-size: 18px;
 }
+
+.Erledigt {
+    text-decoration: line-through;
+}
